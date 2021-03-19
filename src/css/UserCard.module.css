@@ -1,0 +1,67 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 280px;
+  height: 390px;
+  box-shadow: 3px 3px 8px 0 rgb(0 0 0 / 16%);
+  border-radius: 10px;
+  margin: 20px 30px;
+  padding: 15px;
+}
+
+.cardAvatar {
+  width: 180px;
+  height: 180px;
+}
+
+.cardAvatar div svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.16));
+}
+
+.card h1 {
+  font-size: 20px;
+}
+
+.cardInfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+}
+
+.cardInfos li {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  width: 90%;
+  margin-bottom: 3px;
+}
+
+.cardInfos li i {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+}
+
+.cardButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding-bottom: 10px;
+}
+
+.cardButtons button {
+  width: 29%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
