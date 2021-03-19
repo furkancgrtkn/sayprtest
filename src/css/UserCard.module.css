@@ -73,6 +73,10 @@
   border-radius: 5px;
 }
 
+.cardButtons button:hover {
+  background: #e0e0e0;
+}
+
 .editForm {
   width: 360px;
   height: 340px;
@@ -106,6 +110,10 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   margin-top: 10px;
+}
+
+.editForm button:hover {
+  background-color: #157211;
 }
 
 @media only screen and (max-width: 360px) {
