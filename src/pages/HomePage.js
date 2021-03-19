@@ -43,13 +43,31 @@ const HomePage = () => {
     setUsers(filteredUsers);
   };
 
+  const editUser = (editedUser, e) => {
+    e.preventDefault();
+    setUsers((prevState) => {
+      return prevState.map((user) => {
+        if (user.id === editedUser.id) {
+          return { ...user, ...editedUser };
+        } else {
+          return user;
+        }
+      });
+    });
+  };
+
   if (loading) {
     return <Loader />;
   }
   return (
     <div className={styles.container}>
       {users.map((user, index) => (
-        <UserCard key={index} user={user} deleteUser={deleteUser} />
+        <UserCard
+          key={user.id}
+          user={user}
+          deleteUser={deleteUser}
+          editUser={editUser}
+        />
       ))}
     </div>
   );

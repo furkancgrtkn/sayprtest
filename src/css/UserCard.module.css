@@ -52,6 +52,13 @@
   font-size: 14px;
 }
 
+.cardInfos li span {
+  width: calc(100% - 20px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .cardButtons {
   display: flex;
   justify-content: space-between;
@@ -64,4 +71,56 @@
   height: 30px;
   border: none;
   border-radius: 5px;
+}
+
+.editForm {
+  width: 360px;
+  height: 340px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editForm div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.editForm div input {
+  width: 100%;
+  margin-top: 5px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #333333;
+}
+
+.editForm button {
+  width: 100%;
+  background-color: #1a8917;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 360px) {
+  .editForm {
+    width: 260px;
+  }
+
+  .card {
+    width: 260px;
+  }
+
+  .card h1 {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

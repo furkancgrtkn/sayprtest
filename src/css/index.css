@@ -17,6 +17,8 @@ a:hover {
 
 button {
   cursor: pointer;
+  transition: 0.1s;
+  transition-property: transform;
 }
 
 button:focus,
@@ -26,8 +28,9 @@ input:focus {
 }
 
 button:active {
-  transition: cubic-bezier(0.19, 1, 0.22, 1);
-  transform: scale(0.9);
+  transition: 0.1s;
+  transition-property: transform;
+  transform: scale(0.96);
 }
 
 img,
@@ -55,10 +58,22 @@ b {
   color: #333333;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 /* Loader CSS */
 
 .sk-circle {
-  margin: 100px auto;
+  margin: auto;
   width: 40px;
   height: 40px;
   position: relative;
