@@ -8,7 +8,21 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchProfileImages = async (usersData) => {
+      try {
+        usersData.map(async (userData) => {
+          const resp = await axios.get(
+            `https://avatars.dicebear.com/v2/avataaars/${userData.username}.svg?options[mood][]=happy`
+          );
+          setUsers((prev) => {
+            return [...prev, { ...userData, avatar: resp.data }];
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    (async function fetchUsers() {
       try {
         setLoading(true);
         const resp = await axios.get(
@@ -19,24 +33,8 @@ const HomePage = () => {
       } catch (error) {
         console.log(error);
       }
-    };
-    fetchUsers();
+    })();
   }, []);
-
-  const fetchProfileImages = async (usersData) => {
-    try {
-      usersData.map(async (userData) => {
-        const resp = await axios.get(
-          `https://avatars.dicebear.com/v2/avataaars/${userData.username}.svg?options[mood][]=happy`
-        );
-        setUsers((prev) => {
-          return [...prev, { ...userData, avatar: resp.data }];
-        });
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const deleteUser = (userID) => {
     let filteredUsers = users.filter((user) => user.id !== userID);
